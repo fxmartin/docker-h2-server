@@ -14,7 +14,7 @@ VERSION=1.11
 IMAGE="fxmartin/docker-h2-server"
 
 ID=`docker ps | grep "$IMAGE" | head -n1 | cut -d " " -f1`
-IP=`docker-machine env docker | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
+IP=`docker-machine ip docker`
 
 BUILD_CMD="docker build -t=$IMAGE ."
 RUN_CMD="docker run -d -p 55522:22 -p 55580:80 -p 55581:81 -p 1521:1521 $IMAGE"

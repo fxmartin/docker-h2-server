@@ -9,6 +9,11 @@ This repository contains all needed resources to build a docker image with follo
 * h2 server and console running;
 * services configured and runnign via supervisord.
 
+if the image is run without mounting a host directory to /opt/h2-data then there will be no persistence. To enable persistence then just run the container as follows:
+```
+docker run -d -p 55522:22 -p 55580:80 -p 55581:81 -p 1521:1521 -v $(pwd)/t24-db:/opt/h2-data fxmartin/docker-h2-server
+```
+
 For convenience there is a *./manage.sh* command for building, starting (with proper port mappings), stopping and connecting via ssh.
 
 ## Usage
