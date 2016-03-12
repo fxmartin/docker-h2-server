@@ -1,5 +1,5 @@
 # docker-h2-server
-Dockerfile for building docker container with passwordless sshd server and nginx serving static page. This is mostly a template for creating more useful docker images.
+Dockerfile for building docker container h2 database engine. This image is an extension of (fxmartin/docker-sshd-nginx)[https://github.com/fxmartin/docker-sshd-nginx].
 
 ## About
 
