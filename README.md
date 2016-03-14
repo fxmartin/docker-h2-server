@@ -7,7 +7,7 @@ This repository contains all needed resources to build a docker image with follo
 * sshd with passwordless login;
 * nginx running and serving simple static page;
 * h2 server and console running;
-* services configured and runnign via supervisord.
+* services configured and running via supervisord.
 
 if the image is run without mounting a host directory to /opt/h2-data then there will be no persistence. To enable persistence then just run the container as follows:
 ```
