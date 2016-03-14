@@ -40,6 +40,6 @@ ADD nginx/index.html        /var/www/index.html
 ADD supervisor/h2.conf   		/etc/supervisor/conf.d/h2.conf
 
 #h2 tcp, nginx, h2 console, sshd
-EXPOSE 1521 80 81 22
+EXPOSE 1521 80 81 22 91
 
 CMD ["/usr/bin/supervisord", "-n"]

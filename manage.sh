@@ -17,7 +17,7 @@ ID=`docker ps | grep "$IMAGE" | head -n1 | cut -d " " -f1`
 IP=`docker-machine ip docker`
 
 BUILD_CMD="docker build -t=$IMAGE ."
-RUN_CMD="docker run -d -p 55522:22 -p 55580:80 -p 55581:81 -p 1521:1521 $IMAGE"
+RUN_CMD="docker run -d -p 55522:22 -p 55580:80 -p 55581:81  -p 55591:91 -p 1521:1521 $IMAGE"
 SSH_CMD="ssh root@$IP -p 55522 -i ~/.ssh/id_rsa_docker"
 
 is_running() {
@@ -70,6 +70,9 @@ case "$1" in
                 ;;
         console)
                 open -a "Google Chrome" "http://$IP:55581"
+                ;;
+        proc)
+                open -a "Google Chrome" "http://$IP:55591"
                 ;;
         *)
                 echo "Usage: $0 {build|start|stop|status|ssh|web|console}"
